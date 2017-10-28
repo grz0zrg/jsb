@@ -1,0 +1,9 @@
+{    "pb.json": {
+            "name": "Pure Basic",
+            "sample": "; this is a comment \nInitSprite() \nInitKeyboard() \nOpenScreen(800, 600, 16, \"screen name\") \n\nGlobal playerX.w        \nGlobal playerY.w        \nGlobal schussX.w            \nGlobal schussY.w \n\n\nplayerX = 50.0\nplayerY = 400.0\n\n\nRepeat \n  FlipBuffers() \n  ExamineKeyboard() \n  ClearScreen(RGB(0,0,0))  \n  \n  If KeyboardPushed(#PB_Key_Up) And playerY > 0 : playerY -3 : EndIf \n  If KeyboardPushed(#PB_Key_Down) And playerY < 600 : playerY +3 : EndIf \n  If KeyboardPushed(#PB_Key_Left) And playerX > 0 : playerX -3 : EndIf \n  If KeyboardPushed(#PB_Key_Right) And playerX < 800 : playerX +3 : EndIf \n  \n  If KeyboardReleased(#PB_Key_Space) \n    schussX = playerX \n    schussY = playerY \n    schuss = 1 \n  EndIf \n  \n  If  schuss < 600 \n    schussX +6 \n  Else \n    schuss = 0 \n  EndIf \n  \n  StartDrawing(ScreenOutput()) \n    FrontColor(RGB(50,0,150)) : Circle(playerX, playerY, 30)  \n    If schuss : FrontColor(RGB(150,0,50)) : Circle(schussX, schussY, 5) : EndIf \n  StopDrawing() \n  \nUntil KeyboardReleased(#PB_Key_Escape) \n    "
+    },
+    "c.json": {
+        "name": "C",
+        "sample": "// this is a single-line comment \n\n#include <stdio.h> \n\nint main(int argc, char **argv) { \n if (argc > 1) { \n    printf(argv[1]);\n } else { \n    printf(\"hello world\");\n } \n\n return 0; \n}"
+    }
+}

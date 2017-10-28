@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>fast lexer demo</title>
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+        <link rel="stylesheet" type="text/css" href="main.css">
+
+        <script type="text/javascript" src="jquery/jquery-1.11.1.min.js"></script>
+		    <script type="text/javascript" src="lexer.js"></script>
+        <script type="text/javascript" src="lexer_demo.js"></script>
+    </head>
+    <body>
+        <div class="lexer_input" style="display: inline-block">
+        <div style="text-align: center; margin-top: 20px; font-size: 14px;">left is the source to tokenize and to the right is the json lexical grammar</div>
+        <textarea id="lexer_input" rows="30" cols="50"></textarea>
+        <textarea id="lexer_grammar" rows="30" cols="50"></textarea>
+        <br>
+        <div id="stderr" style="text-align: center; color: red;"></div>
+        language:
+        <select id="grammar_select"></select>
+        <br>
+        <div style="margin-top: 4px;">
+            Always use cached optimized grammar
+            <input id="your_id" name="your_name" value="ab" type="checkbox">
+        </div>
+        <button id="scan_button" type="button">Scan with output</button>
+        <br>
+        <button id="no_output_button" type="button">Scan without output</button>
+        <br>
+        <div id="bench_output" style="text-align: center; color: green;"></div>
+        </div>
+        <div id="lexer_output"></div>
+    </body>
+</html>
